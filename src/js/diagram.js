@@ -26,3 +26,29 @@ new Chart(barCtx, {
         }
     }
 });
+
+
+/**
+ * Creates a pie chart showing the number of applicants for the 5 most popular programs.
+ * The chart is rendered in a canvas element with the id "pieChart".
+ * Data is currently hardcoded but will be fetched from a JSON source later.
+ */
+const pieCtx = document.getElementById('pieChart');
+new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Program 1', 'Program 2', 'Program 3', 'Program 4', 'Program 5'],
+        datasets: [{
+            label: 'Antal sökande',
+            data: [300, 250, 180, 120, 90],
+            backgroundColor: [
+                'rgba(172, 57, 82, 1)',
+                'rgba(31, 88, 126, 1)',
+                'rgba(161, 127, 48, 1)',
+                'rgba(29, 127, 127, 1)',
+                'rgba(69, 40, 126, 1)'
+            ],
+            hoverOffset: 6
+        }]
+    }
+});
