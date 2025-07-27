@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./scss/main.scss">
     <title>Startsida</title>
     <script src="js/main.js" type="module"></script>
+    <script type="module" src="js/diagram.js"></script>
 </head>
 
 <body>
@@ -29,6 +30,14 @@
     <main>
 
         <h2>Diagram</h2>
+
+        <section class="grid-layout">
+            <h3>Stapeldiagram – Mest sökta kurser</h3>
+            <canvas id="barChart" class="chart"></canvas>
+
+            <h3>Cirkeldiagram – Mest sökta program</h3>
+            <canvas id="pieChart" class="chart"></canvas>
+        </section>
 
     </main>
 
