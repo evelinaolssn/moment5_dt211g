@@ -1,0 +1,43 @@
+@use "variables";
+
+//Switch to dark theme colors
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: variables.$dark-background-color;
+        color: variables.$dark-text-color;
+    }
+
+    header {
+        background-color: variables.$dark-primary-color;
+    }
+
+    .navigation ul,
+    .navigation a {
+        background-color: variables.$dark-secondary-color;
+        color: variables.$dark-text-color;
+    }
+
+    h2,
+    h3 {
+        color: variables.$dark-primary-color;
+    }
+
+    .grid-layout {
+        background-color: variables.$dark-secondary-color;
+    }
+
+    .button-startpage,
+    .button-sass {
+        background-color: variables.$dark-primary-color;
+        color: variables.$dark-text-color;
+
+        &:hover {
+            background-color: darken(variables.$dark-primary-color, 15%);
+        }
+    }
+
+    footer {
+        background-color: variables.$dark-primary-color;
+        color: variables.$dark-text-color;
+    }
+}

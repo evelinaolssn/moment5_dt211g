@@ -1,0 +1,22 @@
+@use "variables";
+
+//Standard style for all buttons with background color and text color as arguments
+@mixin button-style($bg-color, $text-color, $rounded: true) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+
+    @if $rounded ==true {
+        border-radius: variables.$border-radius;
+    }
+
+    @else {
+        border-radius: 0;
+    }
+
+    //Hover effekt on buttons by darkening bg color
+    &:hover {
+        background-color: darken($bg-color, 15%);
+    }
+}

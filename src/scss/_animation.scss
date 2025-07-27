@@ -1,0 +1,55 @@
+@use "variables";
+
+//Text hover effect that changes color with shadow and rotates 360 degrees
+.hover-text {
+    font-size: 1.5rem;
+    color: variables.$hover-base-color;
+    padding: 2rem;
+    transition: transform 0.7s ease-in, text-shadow 0.7s ease-in, letter-spacing 0.7s ease-in;
+
+    &:hover {
+        color: variables.$hover-text-color;
+        text-shadow: 2px 2px 10px variables.$hover-shadow-color;
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+
+//Animation for bird image flying across the screen in an endless loop
+@keyframes flying-bird {
+    0% {
+        transform: translate(-5vw, -200px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(25vw, -160px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(50vw, -70px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(95vw, 0) rotate(0deg);
+    }
+}
+
+.bird-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.bird-animation {
+    position: absolute;
+    animation: flying-bird 8s linear infinite;
+}
+
+//Image hover effect that rotates from -10 to 0 degrees and scales up
+.tilted-image {
+    transform: rotate(-10deg);
+    transition: transform 0.6s ease;
+
+    &:hover {
+        transform: rotate(0deg) scale(1.1);
+    }
+}

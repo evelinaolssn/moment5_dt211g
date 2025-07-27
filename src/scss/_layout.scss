@@ -1,0 +1,33 @@
+@use "variables";
+
+/*Main layout settings for the entire page*/
+%main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 70vw;
+    width: 100%;
+    padding: 2rem;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .grid-image img {
+        max-width: 100%;
+        width: 30rem;
+        height: auto;
+        border-radius: variables.$border-radius;
+        justify-items: center;
+    }
+}
+
+/*Applies grid-layout settings on all pages*/
+.grid-layout {
+    @extend %main-layout;
+    background-color: variables.$secondary-color;
+}

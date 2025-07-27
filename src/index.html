@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>Startsida</title>
+    <script src="js/main.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>SASS-Webbplats</h1>
+            <div class="hamburger-menu">☰</div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="diagram.html">Diagram</a></li>
+                    <li><a href="animering.html">Animering</a></li>
+                    <li><a href="sass.html">SASS</a></li>
+                    <li><a href="kartor.html">Kartor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h2>Startsida</h2>
+        <section class="grid-layout">
+            <div class="grid-text">
+                <h3>Välkommen till denna SASS-webbplats</h3>
+                <p> Den här webbplatsen är skapad med fokus på att använda SASS som CSS-preprocessor. Syftet har varit
+                    att
+                    bygga
+                    upp en ny designstruktur
+                    med hjälp av partials, variabler, mixins och andra funktioner som gör CSS mer organiserad och
+                    återanvändbar.
+                    Webbplatsen är utvecklat i en automatiserad arbetsmiljö med hjälp av Node.js och Parcel, vilket
+                    möjliggör
+                    snabb kompilering, minifiering och konvertering
+                    från SCSS till CSS. Webbplatsen har stöd för både ljust och mörkt tema samt responsiv design för
+                    olika
+                    skärmstorlekar.
+                </p>
+                <div class="button-section">
+                    <a href="sass.html" class="button-startpage">Läs mer om SASS</a>
+                </div>
+            </div>
+
+            <div class="grid-image">
+                <img src="./images/camera.jpg" alt="En kamera och en kaffe på ett träbord">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Skapad av Evelina Olsson | Epost: evol2401@student.miun.se</p>
+    </footer>
+</body>

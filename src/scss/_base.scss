@@ -1,0 +1,113 @@
+@use "variables";
+@use "mixins";
+
+//Entire page body style 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: variables.$background-color;
+    color: variables.$text-color;
+    line-height: 1.7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+//Header styling and limited width 
+header {
+    background-color: variables.$primary-color;
+    max-width: 75vw;
+    margin: 0 auto;
+    border-radius: variables.$border-radius;
+}
+
+//Centers main heading
+h1 {
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Title design*/
+h2 {
+    text-align: center;
+    padding: 1rem;
+    color: darken(variables.$secondary-color, 25%);
+}
+
+h3 {
+    color: lighten(variables.$text-color, 20%);
+}
+
+//Navigation menu layout and design 
+.navigation {
+    ul {
+        background-color: variables.$secondary-color;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 3rem;
+        padding: 1rem;
+    }
+
+    a {
+        background-color: variables.$secondary-color;
+        color: variables.$text-color;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: variables.$border-radius;
+
+        &:hover {
+            background-color: darken(variables.$secondary-color, 25%);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        ul {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &.visible ul {
+            display: flex;
+        }
+    }
+}
+
+//Hidden hamburger menu while full navigation menu is displayed
+.hamburger-menu {
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+        text-align: center;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+}
+
+//Styling for the button on the start page
+.button-startpage {
+    @include mixins.button-style(variables.$primary-color, variables.$text-color, true);
+}
+
+//Styling for button on the SASS page
+.button-sass {
+    @include mixins.button-style(variables.$background-color, variables.$text-color, false);
+}
+
+//Adds space above the button
+.button-section {
+    margin-top: 3rem;
+}
+
+//Footer styling
+footer {
+    text-align: center;
+    max-width: 75vw;
+    padding: 1rem;
+    margin: 3rem auto 0 auto;
+    background-color: variables.$primary-color;
+    color: variables.$text-color;
+    border-radius: variables.$border-radius;
+}
