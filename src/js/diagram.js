@@ -3,6 +3,28 @@
 import Chart from 'chart.js/auto';
 
 /**
+ * Collects data from JSON-file with admission statistics with fetch and API
+ * 
+ * @async
+ * @function loadData
+ * @returns {Promise<void>} Returns no value but reports data in the console
+ */
+async function loadData() {
+    try {
+        const response = await fetch('/statistik_ht24.json');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Error", error);
+    }
+}
+
+loadData();
+
+
+
+
+/**
  * Creates a bar chart showing the number of applicants for the 6 most popular courses.
  * The chart is rendered in a canvas element with the id "barChart".
  * The dataset and course names are currently hardcoded but will later be replaced by data fetched from an external JSON file via FetchAPI.

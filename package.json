@@ -5,10 +5,10 @@
   "author": "Evelina Olsson",
   "license": "ISC",
   "source": "src/index.html",
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
+"scripts": {
+  "start": "parcel src/index.html",
+  "build": "parcel build src/index.html"
+},
   "description": "Automatisering och publicering för moment 1",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.3",
