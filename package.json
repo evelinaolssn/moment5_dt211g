@@ -7,7 +7,7 @@
   "source": "src/index.html",
 "scripts": {
   "start": "parcel src/index.html",
-  "build": "parcel build src/index.html"
+  "build": "parcel build src/index.html && cp public/*.json dist/"
 },
   "description": "Automatisering och publicering för moment 1",
   "devDependencies": {

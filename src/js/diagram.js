@@ -13,16 +13,15 @@ async function loadData() {
     try {
         const response = await fetch('/statistik_ht24.json');
         const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.log("Error", error);
-    }
-}
+        
+        const courses = data.filter(item => item.type === "Kurs");
+        const programs = data.filter(item => item.type === "Program");
 
-loadData();
+        courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+        programs.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
 
-
-
+        const topSixCourses = courses.slice(0, 6);
+        const topFivePrograms = programs.slice(0, 5);
 
 /**
  * Creates a bar chart showing the number of applicants for the 6 most popular courses.
@@ -33,10 +32,10 @@ const barCtx = document.getElementById('barChart');
 new Chart(barCtx, {
     type: 'bar',
     data: {
-        labels: ['Kurs 1', 'Kurs 2', 'Kurs 3', 'Kurs 4', 'Kurs 5', 'Kurs 6'],
+        labels: topSixCourses.map(item => item.name),
         datasets: [{
             label: 'Antal sökande',
-            data: [100, 95, 85, 80, 60, 50],
+            data: topSixCourses.map(item => item.applicantsTotal),
             backgroundColor: 'rgba(202, 107, 17, 0.76)',
             borderColor: 'rgba(132, 11, 11, 0.14)',
             borderWidth: 1
@@ -59,10 +58,10 @@ const pieCtx = document.getElementById('pieChart');
 new Chart(pieCtx, {
     type: 'pie',
     data: {
-        labels: ['Program 1', 'Program 2', 'Program 3', 'Program 4', 'Program 5'],
+        labels: topFivePrograms.map(item => item.name),
         datasets: [{
             label: 'Antal sökande',
-            data: [300, 250, 180, 120, 90],
+            data: topFivePrograms.map(item => item.applicantsTotal),
             backgroundColor: [
                 'rgba(172, 57, 82, 1)',
                 'rgba(31, 88, 126, 1)',
@@ -74,3 +73,9 @@ new Chart(pieCtx, {
         }]
     }
 });
+    } catch (error) {
+        console.log("Error", error);
+    }
+}
+
+loadData();
