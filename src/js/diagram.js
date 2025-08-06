@@ -7,7 +7,7 @@ import Chart from 'chart.js/auto';
  * 
  * @async
  * @function loadData
- * @returns {Promise<void>} Returns no value but updates the page with charts
+ * @returns {Promise<void>} - Returns no value but updates the page with charts
  */
 async function loadData() {
     try {
@@ -45,11 +45,11 @@ async function loadData() {
                 scales: {
                     x: {
                         ticks: {
-                            maxRotation: 120,  // roterar texten lite
+                            maxRotation: 120,
                             minRotation: 30,
-                        font: {
-                            size: 9
-                        }
+                            font: {
+                                size: 9
+                            }
                         }
                     },
                     y: { beginAtZero: true }
